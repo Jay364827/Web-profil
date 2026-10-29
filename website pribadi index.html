@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajay Asah Virgiantoro | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F5F9; --card:#FFFFFF; --ink:#121A33; --muted:#55607A; --line:#D5DAE6;
+  --accent:#2740E8; --accent-ink:#FFFFFF; --mark:#FFE45C;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1424;--card:#161C33;--ink:#EEF1FA;--muted:#98A2BD;--line:#263050;--accent:#8FA2FF;--accent-ink:#0F1424;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F1424;--card:#161C33;--ink:#EEF1FA;--muted:#98A2BD;--line:#263050;--accent:#8FA2FF;--accent-ink:#0F1424;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--ink);font-family:var(--display);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+.mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+:root[data-theme="dark"] .mark,:root:not([data-theme="light"]) .mark{color:inherit}
+
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:1.25rem;height:4rem}
+.brand{font-weight:800;text-decoration:none;margin-right:auto;letter-spacing:-.01em}
+nav a.link{text-decoration:none;color:var(--muted);font-size:.95rem;font-weight:600}
+nav a.link:hover{color:var(--ink)}
+.icon-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);width:2.4rem;height:2.4rem;border-radius:50%;cursor:pointer;font-size:1rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.7rem 1.3rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:5rem 0 4.5rem}
+h1{font-size:clamp(2.8rem,7vw,5.2rem);line-height:.98;letter-spacing:-.035em;font-weight:800}
+.lead{margin:1.5rem 0 2rem;max-width:32rem;color:var(--muted);font-size:1.15rem}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap}
+
+.editor{background:#121A33;color:#DCE3FA;border-radius:14px;box-shadow:0 24px 60px -20px rgba(18,26,51,.55);overflow:hidden;font-family:var(--mono);font-size:.86rem;line-height:1.75}
+.editor .bar{display:flex;align-items:center;gap:.4rem;padding:.7rem 1rem;background:#0C1226;color:#8590B3;font-size:.78rem}
+.editor .bar i{width:.65rem;height:.65rem;border-radius:50%;background:#2B3560;display:block}
+.editor .bar span{margin-left:.6rem}
+.editor pre{padding:1.2rem 1.3rem 1.4rem;overflow-x:auto;font:inherit}
+.k{color:#8FA2FF}.s{color:#FFE45C}.c{color:#6F7BA3}.f{color:#7EE0B5}
+.caret{display:inline-block;width:.55em;height:1.05em;background:#FFE45C;vertical-align:text-bottom;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.025em;line-height:1.1;margin-bottom:.6rem;font-weight:800}
+.sub{color:var(--muted);max-width:38rem;margin-bottom:2.5rem}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{color:var(--muted);margin-bottom:1rem}
+dl{display:grid;grid-template-columns:7.5rem 1fr;gap:.9rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+dt{color:var(--muted);font-size:.92rem}
+dd{font-weight:600}
+dd.num{font-family:var(--mono);font-weight:500}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+.panel h3{font-size:1.2rem;margin-bottom:.4rem;letter-spacing:-.01em}
+.panel p{color:var(--muted);font-size:.97rem;margin-bottom:1.1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
+.chips li{font-family:var(--mono);font-size:.8rem;padding:.3rem .7rem;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+
+.timeline{list-style:none;padding:0;display:grid;gap:1.25rem}
+.ach{display:grid;grid-template-columns:6rem 1fr;gap:1.5rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+.ach .yr{font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.ach h3{font-size:1.2rem}
+.ach .org{color:var(--muted);font-size:.93rem;margin-bottom:.5rem}
+.ach p{font-size:.98rem}
+.ach.empty{border-style:dashed;background:transparent}
+.ach.empty .yr{color:var(--muted)}
+.ach.empty h3,.ach.empty p{color:var(--muted)}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.links{display:grid;gap:.8rem}
+.links a{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.3rem;text-decoration:none;transition:border-color .15s}
+.links a:hover{border-color:var(--accent)}
+.links small{color:var(--muted);font-size:.8rem}
+.links b{font-weight:600}
+footer{border-top:1px solid var(--line);padding:1.8rem 0;color:var(--muted);font-size:.9rem}
+
+@media (max-width:820px){
+  .hero,.about,.contact{grid-template-columns:1fr;gap:2rem}
+  .skills{grid-template-columns:1fr}
+  .hero{padding-top:3rem}
+  nav a.link{display:none}
+  .ach{grid-template-columns:1fr;gap:.3rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Navigasi utama">
+    <a class="brand" href="#atas">Ajay A. V.</a>
+    <a class="link" href="#about">About</a>
+    <a class="link" href="#skills">What I Can Do</a>
+    <a class="link" href="#achievement">Achievement</a>
+    <a class="link" href="#contact">Contact</a>
+    <button class="icon-btn" id="theme" aria-label="Ganti tema terang atau gelap">◐</button>
+  </nav>
+</header>
+
+<main id="atas">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Ajay Asah Virgiantoro</h1>
+        <p class="lead">Mahasiswa Teknik Informatika di Universitas Negeri Surabaya yang sedang membangun dasar <span class="mark">pemrograman, algoritma, dan pengembangan web</span>.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Hubungi saya</a>
+          <a class="btn ghost" href="#skills">Lihat kemampuan</a>
+        </div>
+      </div>
+      <div class="editor" aria-label="Ringkasan profil dalam bentuk kode">
+        <div class="bar"><i></i><i></i><i></i><span>profil.js</span></div>
+<pre><span class="k">const</span> <span class="f">mahasiswa</span> = {
+  nama: <span class="s">"Ajay Asah Virgiantoro"</span>,
+  nim: <span class="s">"26051204015"</span>,
+  prodi: <span class="s">"Teknik Informatika"</span>,
+  kampus: <span class="s">"Universitas Negeri Surabaya"</span>,
+  pendidikan: <span class="s">"Menuju S1"</span>,
+  sedangBelajar: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JavaScript"</span>],
+};
+
+<span class="c">// Selalu ingin belajar lebih banyak</span>
+<span class="f">mulaiNgoding</span>(mahasiswa);<span class="caret"></span></pre>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="sub">Profil singkat, pendidikan, dan aktivitas saya saat ini.</p>
+      <div class="about">
+        <div>
+          <p>Saya seorang mahasiswa Teknik Informatika di Universitas Negeri Surabaya yang sedang menempuh pendidikan menuju gelar S1.</p>
+          <p>Saat ini saya mempelajari dasar-dasar pemrograman, algoritma, flowchart, dan struktur data, sambil mencoba membuat website sederhana lewat proyek portofolio ini.</p>
+          <p>Tujuan saya: terus berlatih menulis kode yang rapi dan membangun karya yang bisa dilihat orang lain.</p>
+        </div>
+        <dl>
+          <dt>Nama</dt><dd>Ajay Asah Virgiantoro</dd>
+          <dt>NIM</dt><dd class="num">26051204015</dd>
+          <dt>Prodi</dt><dd>Teknik Informatika</dd>
+          <dt>Kampus</dt><dd>Universitas Negeri Surabaya</dd>
+          <dt>Pendidikan</dt><dd>Menuju S1</dd>
+          <dt>Aktivitas</dt><dd>Kuliah, belajar pemrograman, dan membuat portofolio website</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>What I Can Do</h2>
+      <p class="sub">Kemampuan coding yang sedang saya pelajari dan tools yang saya gunakan.</p>
+      <div class="skills">
+        <article class="panel">
+          <h3>Pemrograman web</h3>
+          <p>Membuat halaman web yang rapi dan responsif di berbagai ukuran layar.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive design</li></ul>
+        </article>
+        <article class="panel">
+          <h3>Dasar informatika</h3>
+          <p>Menyusun logika penyelesaian masalah sebelum menulis kode.</p>
+          <ul class="chips"><li>Algoritma</li><li>Flowchart</li><li>Struktur data</li><li>Logika pemrograman</li><li>Python</li></ul>
+        </article>
+        <article class="panel">
+          <h3>Tools</h3>
+          <p>Alat kerja sehari-hari untuk menulis, menguji, dan menyimpan kode.</p>
+          <ul class="chips"><li>Visual Studio Code</li><li>Live Server</li><li>Git</li><li>GitHub</li><li>AI coding assistant</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievement">
+    <div class="wrap">
+      <h2>Achievement</h2>
+      <p class="sub">Pencapaian yang menunjukkan perkembangan saya.</p>
+      <ul class="timeline">
+        <!-- Salin blok <li> ini untuk menambah pencapaian baru: nama, tahun, penyelenggara, deskripsi, bukti -->
+        <li class="ach">
+          <div class="yr">2026</div>
+          <div>
+            <h3>Diterima di Teknik Informatika</h3>
+            <div class="org">Universitas Negeri Surabaya</div>
+            <p>Memulai perkuliahan S1 Teknik Informatika dan mengikuti mata kuliah dasar pemrograman.</p>
+          </div>
+        </li>
+        <li class="ach empty">
+          <div class="yr">Segera</div>
+          <div>
+            <h3>Pencapaian berikutnya</h3>
+            <p>Sertifikat, lomba, atau proyek yang selesai akan ditambahkan di sini.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Mari bekerja sama</h2>
+        <p class="sub">Terbuka untuk belajar bersama, kolaborasi proyek, dan kesempatan magang di bidang informatika.</p>
+        <a class="btn" href="#" id="cv">Unduh CV / resume</a>
+      </div>
+      <div class="links">
+        <!-- Ganti href dan teks di bawah dengan data milikmu -->
+        <a href="mailto:emailkamu@gmail.com"><small>Email</small><b>emailkamu@gmail.com</b></a>
+        <a href="https://github.com/usernamekamu" target="_blank" rel="noopener"><small>GitHub</small><b>github.com/usernamekamu</b></a>
+        <a href="https://www.linkedin.com/in/usernamekamu" target="_blank" rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/usernamekamu</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Ajay Asah Virgiantoro. Teknik Informatika, Universitas Negeri Surabaya.</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var t=localStorage.getItem('tema'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('tema',next);}catch(e){}
+  });
+  // Ganti "#" pada tombol CV dengan nama file CV kamu, mis. "cv-ajay.pdf"
+  document.getElementById('cv').addEventListener('click',function(e){
+    if(this.getAttribute('href')==='#'){e.preventDefault(); alert('Letakkan file CV di folder portfolio, lalu ganti href tombol ini.');}
+  });
+})();
+</script>
+</body>
+</html>
